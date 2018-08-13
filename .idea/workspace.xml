@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d881729-3de5-4f0d-a383-706d77ae5fe1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3d881729-3de5-4f0d-a383-706d77ae5fe1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +15,7 @@
     <session id="-1221024502">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -58,7 +56,7 @@
             <state relative-caret-position="48">
               <caret line="2" selection-start-line="2" selection-end-line="2" />
               <folding>
-                <marker date="1534168471423" expanded="true" signature="87:92" ph="..." />
+                <marker date="1534170183604" expanded="true" signature="87:92" ph="..." />
               </folding>
             </state>
           </provider>
@@ -189,16 +187,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
+    <frame x="67" y="25" width="1849" height="864" extended-state="6" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24958494" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25013867" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="manage.py@dailyfresh" visible="true" weight="0.26594594" />
+      <window_info active="true" anchor="bottom" id="manage.py@dailyfresh" visible="true" weight="0.33514985" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
@@ -245,7 +242,7 @@
         <state relative-caret-position="48">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
           <folding>
-            <marker date="1534168471423" expanded="true" signature="87:92" ph="..." />
+            <marker date="1534170183604" expanded="true" signature="87:92" ph="..." />
           </folding>
         </state>
       </provider>
