@@ -1,1 +1,3 @@
 # dailyfresh
+
+django project
