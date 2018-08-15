@@ -54,11 +54,40 @@ def process_login(request):
             response = JsonResponse({"user_error": 0, "pwd_error": 0})
             remeber_me = post.get("remeber", "0")
             if remeber_me == "1":
+                response.set_cookie("id", user_info[0].id)
                 response.set_cookie("user_name", user_name)
             else:
+                response.delete_cookie("id")
                 response.delete_cookie("user_name")
             return response
         else:
             return JsonResponse({"user_error": 0, "pwd_error": 1})
     else:
         return JsonResponse({"user_error": 1, "pwd_error": 0})
+
+
+def user_center_info(request):
+    id = request.COOKIES.get("id")
+    user = UserInfo.objects.get(pk=id)
+    context = {"title": "用户中心", "user": user}
+    return render(request, "df_user/user_center_info.html", context)
+
+
+def user_center_site(request):
+    id = request.COOKIES.get("id")
+    user = UserInfo.objects.get(pk=id)
+    context = {"title": "用户中心", "user": user}
+    return render(request, "df_user/user_center_site.html", context)
+
+
+def site_handler(request):
+    post = request.POST
+    id = request.COOKIES.get("id")
+    user = UserInfo.objects.get(pk=id)
+    user.recipients = post.get("recipients", "")
+    user.address = post.get("address", "")
+    user.postcode = post.get("postcode", "")
+    user.mobilephone = post.get("mobilephone", "")
+    user.save()
+    context = {"title": "用户中心", "user": user}
+    return render(request, "df_user/user_center_site.html", context)
