@@ -7,7 +7,7 @@ from hashlib import sha1
 # Create your views here.
 
 def register(request):
-    context = {"title": "注册"}
+    context = {"title": "注册", "sub_page_name": 1}
     return render(request, 'df_user/register.html', context)
 
 
@@ -36,7 +36,7 @@ def process_register(request):
 
 def login(request):
     user_name = request.COOKIES.get("user_name", "")
-    context = {"title": "登录", "user_name": user_name}
+    context = {"title": "登录", "user_name": user_name, "sub_page_name": 1}
     return render(request, 'df_user/login.html', context)
 
 
@@ -69,14 +69,14 @@ def process_login(request):
 def user_center_info(request):
     id = request.COOKIES.get("id")
     user = UserInfo.objects.get(pk=id)
-    context = {"title": "用户中心", "user": user}
+    context = {"title": "用户中心", "user": user, "sub_page_name": 1}
     return render(request, "df_user/user_center_info.html", context)
 
 
 def user_center_site(request):
     id = request.COOKIES.get("id")
     user = UserInfo.objects.get(pk=id)
-    context = {"title": "用户中心", "user": user}
+    context = {"title": "用户中心", "user": user, "sub_page_name": 1}
     return render(request, "df_user/user_center_site.html", context)
 
 
@@ -89,5 +89,5 @@ def site_handler(request):
     user.postcode = post.get("postcode", "")
     user.mobilephone = post.get("mobilephone", "")
     user.save()
-    context = {"title": "用户中心", "user": user}
+    context = {"title": "用户中心", "user": user, "sub_page_name": 1}
     return render(request, "df_user/user_center_site.html", context)
