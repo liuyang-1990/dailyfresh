@@ -38,3 +38,19 @@ def list(request, type_id, sort_id, page_index):
                "paginator": paginator
                }
     return render(request, "df_goods/list.html", context)
+
+
+def detail(request, id):
+    type_infos = TypeInfo.objects.filter(isDelete=False)
+    goods_info = Goods.objects.get(pk=id)
+    goods_info.hot = goods_info.hot + 1
+    goods_info.save()
+    type_info = goods_info.type
+    new_goods = goods_info.type.goods_set.order_by("-id")[0:2]
+    context = {"title": "商品详情", "guest_cart": 1,
+               "typeinfos": type_infos,
+               "type_info": type_info,
+               "new_goods": new_goods,
+               "goods_info": goods_info}
+
+    return render(request, 'df_goods/detail.html', context)

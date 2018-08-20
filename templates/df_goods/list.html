@@ -1,34 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'df_goods/base.html' %}
 
-{% block page_content %}
-
-    <div class="navbar_con">
-        <div class="navbar clearfix">
-            <div class="subnav_con fl">
-                <h1>全部商品分类</h1>
-                <span></span>
-                <ul class="subnav">
-                    {% for typeinfo in typeinfos %}
-                        <li><a href="/list/{{ typeinfo.id }}/1/1"
-                               class="{{ typeinfo.class_name }}">{{ typeinfo.name }}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <ul class="navlist fl">
-                <li><a href="">首页</a></li>
-                <li class="interval">|</li>
-                <li><a href="">手机生鲜</a></li>
-                <li class="interval">|</li>
-                <li><a href="">抽奖</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="breadcrumb">
-        <a href="#">全部分类</a>
-        <span>></span>
-        <a href="#">{{ type_info.name }}</a>
-    </div>
+{% block detail %}
 
     <div class="main_wrap clearfix">
         <div class="l_wrap fl clearfix">
@@ -63,7 +35,7 @@
             <ul class="goods_type_list clearfix">
                 {% for p in page %}
                     <li>
-                        <a href="detail.html"><img src="/static/{{ p.images }}"></a>
+                        <a href="/detail/{{ p.id }}"><img src="/static/{{ p.images }}"></a>
                         <h4><a href="/detail/{{ p.id }}">{{ p.name }}</a></h4>
                         <div class="operate">
                             <span class="prize">￥{{ p.price }}</span>
