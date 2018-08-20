@@ -67,6 +67,11 @@ def process_login(request):
         return JsonResponse({"user_error": 1, "pwd_error": 0})
 
 
+def logout(request):
+    request.session.flush()
+    return redirect("/")
+
+
 @login_check
 def user_center_info(request):
     id = request.session["id"]
