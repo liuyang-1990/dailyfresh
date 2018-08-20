@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d881729-3de5-4f0d-a383-706d77ae5fe1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/df_goods/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/df_goods/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dailyfresh/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/dailyfresh/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dailyfresh/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dailyfresh/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/df_goods/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/df_goods/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/df_goods/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/df_goods/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/df_goods/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/df_goods/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/df_goods/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/df_goods/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/df_user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/df_user/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/df_goods/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/df_goods/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/df_goods/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/df_goods/list.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,60 +37,115 @@
     <session id="-1221024502">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.31" value="2" />
           <entry key="project.open.time.35" value="2" />
-          <entry key="project.open.time.36" value="1" />
+          <entry key="project.open.time.36" value="2" />
           <entry key="project.open.time.41" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="1109" />
+          <entry key="html" value="1566" />
           <entry key="js" value="563" />
-          <entry key="py" value="2679" />
+          <entry key="py" value="3216" />
           <entry key="py@dailyfresh" value="55" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CommandLine" value="17" />
-          <entry key="HTML" value="1109" />
+          <entry key="HTML" value="1566" />
           <entry key="JavaScript" value="563" />
           <entry key="PLAIN_TEXT" value="38" />
-          <entry key="Python" value="2679" />
+          <entry key="Python" value="3216" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="18" />
+          <entry key="html" value="22" />
           <entry key="jpg" value="54" />
           <entry key="js" value="5" />
-          <entry key="py" value="41" />
+          <entry key="py" value="45" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="18" />
+          <entry key="HTML" value="22" />
           <entry key="Image" value="54" />
           <entry key="JavaScript" value="5" />
-          <entry key="Python" value="41" />
+          <entry key="Python" value="45" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/df_goods/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+                <marker date="1534602602909" expanded="true" signature="1516:1517" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/df_goods/list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="367">
+              <caret line="86" column="85" selection-start-line="86" selection-start-column="85" selection-end-line="86" selection-end-column="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/df_goods/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+            <state relative-caret-position="463">
+              <caret line="24" column="8" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="8" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
-                <marker date="1534511510806" expanded="true" signature="124:129" ph="..." />
+                <marker date="1534751452452" expanded="true" signature="124:129" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/df_goods/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/df_goods/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="63" column="69" selection-start-line="63" selection-start-column="63" selection-end-line="63" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/df_goods/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="5" column="58" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,14 +184,15 @@
         <option value="$PROJECT_DIR$/df_user/urls.py" />
         <option value="$PROJECT_DIR$/templates/df_user/user_center_site.html" />
         <option value="$PROJECT_DIR$/dailyfresh/settings.py" />
-        <option value="$PROJECT_DIR$/df_goods/admin.py" />
-        <option value="$PROJECT_DIR$/df_goods/models.py" />
         <option value="$PROJECT_DIR$/dailyfresh/urls.py" />
-        <option value="$PROJECT_DIR$/df_goods/urls.py" />
         <option value="$PROJECT_DIR$/df_user/views.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/templates/df_goods/index.html" />
+        <option value="$PROJECT_DIR$/df_goods/urls.py" />
         <option value="$PROJECT_DIR$/df_goods/views.py" />
+        <option value="$PROJECT_DIR$/templates/df_goods/index.html" />
+        <option value="$PROJECT_DIR$/df_goods/models.py" />
+        <option value="$PROJECT_DIR$/df_goods/admin.py" />
+        <option value="$PROJECT_DIR$/templates/df_goods/list.html" />
       </list>
     </option>
   </component>
@@ -180,6 +232,12 @@
               <item name="dailyfresh" type="b2602c69:ProjectViewProjectNode" />
               <item name="dailyfresh" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dailyfresh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dailyfresh" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="df_goods" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -255,7 +313,7 @@
     <frame x="67" y="25" width="1849" height="864" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2667776" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2701054" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -298,10 +356,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-          <folding>
-            <element signature="e#1130#1423#0#HTML" />
-            <element signature="e#1458#1756#0#HTML" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -319,16 +373,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/df_goods/detail.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/df_goods/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/df_user/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -339,6 +383,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding>
+            <marker date="1534247651045" expanded="true" signature="87:92" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -386,13 +433,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="124" column="1" lean-forward="true" selection-start-line="124" selection-start-column="1" selection-end-line="124" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/df_goods/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -465,33 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/df_goods/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/df_goods/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="48" column="14" lean-forward="true" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/df_goods/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/images/goods/goods006.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -531,14 +544,64 @@
     <entry file="file://$PROJECT_DIR$/static/images/goods/goods018.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/df_goods/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2520" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/df_goods/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+            <marker date="1534602602909" expanded="true" signature="1516:1517" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/df_goods/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="63" column="69" selection-start-line="63" selection-start-column="63" selection-end-line="63" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/df_goods/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/df_goods/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        <state relative-caret-position="463">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="8" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
-            <marker date="1534511510806" expanded="true" signature="124:129" ph="..." />
+            <marker date="1534751452452" expanded="true" signature="124:129" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/df_goods/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="58" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/df_goods/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="86" column="85" selection-start-line="86" selection-start-column="85" selection-end-line="86" selection-end-column="85" />
         </state>
       </provider>
     </entry>

@@ -3,4 +3,11 @@ from .models import *
 
 # Register your models here.
 admin.site.register(TypeInfo);
-admin.site.register(Goods)
+
+
+class GoodsAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'images', 'type']
+    list_filter = ['type']
+
+
+admin.site.register(Goods, GoodsAdmin)

@@ -23,6 +23,5 @@ class Goods(models.Model):
     isDelete = models.BooleanField(default=False)
     hot = models.IntegerField()
     type = models.ForeignKey(TypeInfo, on_delete=models.DO_NOTHING)
-
     def __str__(self):
         return self.name
