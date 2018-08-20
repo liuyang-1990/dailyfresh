@@ -52,5 +52,23 @@ def detail(request, id):
                "type_info": type_info,
                "new_goods": new_goods,
                "goods_info": goods_info}
+    response = render(request, 'df_goods/detail.html', context)
 
-    return render(request, 'df_goods/detail.html', context)
+    # 最近浏览 5个商品
+    id = str(id)
+    goods_ids_str = request.COOKIES.get("goods_ids", "")
+    goods_ids = []
+    if goods_ids_str == "":
+        goods_ids.insert(0, id)
+    else:
+        goods_ids = goods_ids_str.split(",")
+        if id in goods_ids:
+            goods_ids.remove(id)
+            goods_ids.insert(0, id)
+        else:
+            goods_ids.insert(0, id)
+    if len(goods_ids) > 5:
+        goods_ids.pop()
+    response.set_cookie("goods_ids", ",".join(goods_ids))
+
+    return response

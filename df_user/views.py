@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from .models import *
+from df_goods.models import *
 from hashlib import sha1
 from .login_decorator import login_check
 
@@ -76,7 +77,14 @@ def logout(request):
 def user_center_info(request):
     id = request.session["id"]
     user = UserInfo.objects.get(pk=id)
-    context = {"title": "用户中心", "user": user, "sub_page_name": 1}
+    goods_ids_str = request.COOKIES.get("goods_ids", "")
+    goods_infos = []
+    if goods_ids_str != "":
+        goods_ids = goods_ids_str.split(",")
+        for goods_id in goods_ids:
+            goods_info = Goods.objects.get(pk=int(goods_id))
+            goods_infos.append(goods_info)
+    context = {"title": "用户中心", "user": user, "sub_page_name": 1, "recently_view": goods_infos}
     return render(request, "df_user/user_center_info.html", context)
 
 
@@ -84,6 +92,7 @@ def user_center_info(request):
 def user_center_site(request):
     id = request.session["id"]
     user = UserInfo.objects.get(pk=id)
+
     context = {"title": "用户中心", "user": user, "sub_page_name": 1}
     return render(request, "df_user/user_center_site.html", context)
 

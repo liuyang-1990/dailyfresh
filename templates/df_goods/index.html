@@ -60,8 +60,8 @@
                 <ul class="goods_list fl">
                     {% for f in foo %}
                         <li>
-                            <h4><a href="#">{{ f.name }}</a></h4>
-                            <a href="#"><img src="/static/{{ f.images }}"></a>
+                            <h4><a href="/detail/{{ f.id }}">{{ f.name }}</a></h4>
+                            <a href="/detail/{{ f.id }}"><img src="/static/{{ f.images }}"></a>
                             <div class="prize">¥ {{ f.price }}</div>
                         </li>
                     {% endfor %}
