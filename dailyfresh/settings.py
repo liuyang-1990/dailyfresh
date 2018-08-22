@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'df_user.apps.DailyfreshwebConfig',
     'df_goods.apps.DfGoodsConfig',
+    'df_cart.apps.DfCartConfig',
     'tinymce'
 ]
 

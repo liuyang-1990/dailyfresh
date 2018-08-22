@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+
+    <div class="total_count">全部商品<em>{{ cart_info.count }}</em>件</div>
+    <ul class="cart_list_th clearfix">
+        <li class="col01">商品名称</li>
+        <li class="col02">商品单位</li>
+        <li class="col03">商品价格</li>
+        <li class="col04">数量</li>
+        <li class="col05">小计</li>
+        <li class="col06">操作</li>
+    </ul>
+
+    {% for cart in cart_info %}
+        <ul class="cart_list_td clearfix">
+            <li class="col01"><input class="chk" onclick="checkOne(this)" type="checkbox" name="" checked></li>
+            <li class="col02"><img src="/static/{{ cart.goods.images }}"></li>
+            <li class="col03">{{ cart.goods.name }}<br><em>{{ cart.goods.price }}元/{{ cart.goods.unit }}</em></li>
+            <li class="col04">{{ cart.goods.unit }}</li>
+            <li class="col05">{{ cart.goods.price }}元</li>
+            <li class="col06">
+                <div class="num_add">
+                    <a href="javascript:;" class="add fl" onclick="calc(this,'+','{{ cart.id }}')">+</a>
+                    <input type="text" class="num_show fl" value="{{ cart.count }}">
+                    <a href="javascript:;" class="minus fl" onclick="calc(this,'-','{{ cart.id }}')">-</a>
+                </div>
+            </li>
+            <li class="col07">
+            </li>
+            <li class="col08"><a href="javascript:;" onclick="del(this,'{{ cart.id }}')">删除</a></li>
+        </ul>
+    {% endfor %}
+
+    {% if cart_info.count != 0 %}
+        <ul class="settlements">
+            <li class="col01"><input class="chk_all" onclick="checkAll(this)" type="checkbox" name="" checked=""></li>
+            <li class="col02">全选</li>
+            <li class="col03">合计(不含运费)：
+                <span>¥</span>
+                <em id="total"></em><br>
+                共计<b>{{ cart_info.count }}</b>件商品
+            </li>
+            <li class="col04"><a href="place_order.html">去结算</a></li>
+        </ul>
+    {% endif %}
+
+
+{% endblock %}
+
+{% block js %}
+
+    <script>
+        function calc(obj, mark, id) {
+            let new_num;
+            if (mark == "+") {
+                let origin_num = $(obj).next().val();
+                new_num = parseInt(origin_num) + 1;
+                $(obj).next().val(new_num);
+
+            } else if (mark == "-") {
+                let origin_num = $(obj).prev().val();
+                new_num = parseInt(origin_num) - 1;
+                if (new_num <= 0) {
+                    return;
+                }
+                $(obj).prev().val(new_num);
+            }
+            let price = parseFloat($(obj).parent().parent().prev().text());
+            let total = (new_num * price).toFixed(2);
+            $(obj).parent().parent().next().html(total + "元");
+            calcTotal();
+            edit(id, new_num)
+        }
+
+
+        function edit(id, count) {
+            $.ajax({
+                url: "/cart/edit/" + id + "/" + count,
+                type: "get",
+                dataType: "json",
+                success: function (data) {
+                    if (data.msg != "ok") {
+                        alert(data.msg)
+                    }
+
+                }
+            });
+        }
+
+
+        function del(obj, id) {
+            if (confirm("确定要删除吗?")) {
+                $.ajax({
+                    url: "/cart/delete/" + id,
+                    type: "get",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.msg == "ok") {
+                            $(obj).parents(".cart_list_td").remove();
+                            calcTotal();
+                        } else {
+                            alert(data.msg);
+                        }
+                    }
+                });
+            }
+        }
+
+        $(function () {
+            //计算小计
+            calcSubTotal();
+            //计算总和
+            calcTotal();
+
+        })
+
+        //小计
+        function calcSubTotal() {
+
+            $(".col07").each(function () {
+                let price = parseFloat($(this).prev().prev().text());
+                let count = parseInt($(this).prev().children().children(".num_show").val());
+                let total = (price * count).toFixed(2);
+                $(this).text(total + "元");
+            });
+
+        }
+
+        //计算总和
+        function calcTotal() {
+            let total_1 = 0;
+            $(".col07").each(function () {
+                total_1 += parseFloat($(this).text());
+            });
+            $("#total").text(total_1.toFixed(2));
+        }
+
+        //全选
+        function checkAll(obj) {
+            var isChecked = $(obj).is(':checked');
+
+            $(".chk").each(function () {
+                if (isChecked) {
+                    $(this).prop("checked", true);
+                } else {
+                    $(this).prop("checked", false);
+                }
+            });
+        }
+
+        //单选
+        function checkOne() {
+            if ($(".chk:checked").length !={{ cart_info.count }}) {
+                $(".chk_all").prop("checked", false);
+            } else {
+                $(".chk_all").prop("checked", true);
+            }
+        }
+    </script>
+{% endblock %}
