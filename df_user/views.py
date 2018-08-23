@@ -97,6 +97,12 @@ def user_center_site(request):
     return render(request, "df_user/user_center_site.html", context)
 
 
+@login_check
+def user_center_order(request):
+    context = {"title": "用户中心", "sub_page_name": 1}
+    return render(request, "df_user/user_center_order.html", context)
+
+
 def site_handler(request):
     post = request.POST
     id = request.session["id"]

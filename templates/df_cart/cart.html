@@ -14,7 +14,8 @@
 
     {% for cart in cart_info %}
         <ul class="cart_list_td clearfix">
-            <li class="col01"><input class="chk" onclick="checkOne(this)" type="checkbox" name="" checked></li>
+            <li class="col01"><input class="chk" value="{{ cart.id }}" onclick="checkOne(this)" type="checkbox" name=""
+                                     checked></li>
             <li class="col02"><img src="/static/{{ cart.goods.images }}"></li>
             <li class="col03">{{ cart.goods.name }}<br><em>{{ cart.goods.price }}元/{{ cart.goods.unit }}</em></li>
             <li class="col04">{{ cart.goods.unit }}</li>
@@ -41,7 +42,7 @@
                 <em id="total"></em><br>
                 共计<b>{{ cart_info.count }}</b>件商品
             </li>
-            <li class="col04"><a href="place_order.html">去结算</a></li>
+            <li class="col04"><a onclick="place_order()">去结算</a></li>
         </ul>
     {% endif %}
 
@@ -157,5 +158,17 @@
                 $(".chk_all").prop("checked", true);
             }
         }
+
+        function place_order() {
+            var cart_id = "";
+            $(".chk").each(function () {
+                if ($(this).prop("checked")) {
+                    cart_id += $(this).val() + ",";
+                }
+            });
+            cart_id = cart_id.substring(0, cart_id.length - 1)
+            window.location.href = "/order/place_order?cart_id=" + cart_id;
+        }
+
     </script>
 {% endblock %}

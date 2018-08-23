@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'df_user.apps.DailyfreshwebConfig',
     'df_goods.apps.DfGoodsConfig',
     'df_cart.apps.DfCartConfig',
+    'df_order.apps.DfOrderConfig',
     'tinymce'
 ]
 
