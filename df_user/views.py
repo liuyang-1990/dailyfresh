@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
+from django.core.paginator import Paginator
 from .models import *
 from df_goods.models import *
 from hashlib import sha1
 from .login_decorator import login_check
+from df_cart.models import *
+from df_order.models import *
 
 
 # Create your views here.
@@ -92,15 +95,8 @@ def user_center_info(request):
 def user_center_site(request):
     id = request.session["id"]
     user = UserInfo.objects.get(pk=id)
-
     context = {"title": "用户中心", "user": user, "sub_page_name": 1}
     return render(request, "df_user/user_center_site.html", context)
-
-
-@login_check
-def user_center_order(request):
-    context = {"title": "用户中心", "sub_page_name": 1}
-    return render(request, "df_user/user_center_order.html", context)
 
 
 def site_handler(request):
@@ -114,3 +110,14 @@ def site_handler(request):
     user.save()
     context = {"title": "用户中心", "user": user, "sub_page_name": 1}
     return render(request, "df_user/user_center_site.html", context)
+
+
+@login_check
+def user_center_order(request, pageIndex):
+    id = request.session["id"]
+    orders = OrderInfo.objects.filter(user_id=id)
+    paginator = Paginator(orders, 10)
+    page = paginator.page(pageIndex)
+
+    context = {"title": "用户中心", "sub_page_name": 1, "paginator": paginator, "page": page}
+    return render(request, "df_user/user_center_order.html", context)

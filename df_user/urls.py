@@ -9,7 +9,7 @@ urlpatterns = [
     path('logout', logout),
     path('process_login', process_login),
     path('user_center_info', user_center_info),
-    path('user_center_order',user_center_order),
+    path('user_center_order/<int:pageIndex>', user_center_order),
     path('user_center_site', user_center_site),
     path('site_handler', site_handler)
 ]
