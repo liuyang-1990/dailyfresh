@@ -19,6 +19,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
+    # path('search/', include('haystack.urls')),
     path('user/', include('df_user.urls')),
     path('', include('df_goods.urls')),
     path('cart/', include('df_cart.urls')),

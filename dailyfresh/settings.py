@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'df_goods.apps.DfGoodsConfig',
     'df_cart.apps.DfCartConfig',
     'df_order.apps.DfOrderConfig',
-    'tinymce'
+    'tinymce',
+    'haystack'
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,13 @@ TINYMCE_DEFAULT_CONFIG = {
     'width': 600,
     'height': 400,
 }
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_cn_backend.WhooshEngine',
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+    }
+}
+
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10

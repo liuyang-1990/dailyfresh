@@ -1,0 +1,46 @@
+{% extends 'df_goods/base.html' %}
+
+{% block detail %}
+    <div class="main_wrap clearfix">
+        <div class="r_wrap fr clearfix">
+            <ul class="goods_type_list clearfix">
+                {% for result in page_obj %}
+                    <li>
+                        <a href="/detail/{{ result.object.id }}"><img src="/static/{{ result.object.images }}"></a>
+                        <h4><a href="/detail/{{ result.object.id }}">{{ result.object.name }}</a></h4>
+                        <div class="operate">
+                            <span class="prize">￥{{ result.object.price }}</span>
+                            <span class="unit">{{ result.object.price }}/{{ result.object.unit }}</span>
+                            <a href="/cart/add/{{ result.object.id }}/1" class="add_goods" title="加入购物车"></a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <div class="pagenation">
+                {% if page_obj.has_previous %}
+                    <a href="/search/?q={{ query }}&page={{ page_obj.previous_page_number }}">上一页</a>
+                {% endif %}
+
+                {% for pindex in paginator.page_range %}
+                    {% if page.number == pindex %}
+                        <a href="/search/?q={{ query }}&page={{ pindex }}" class="active">{{ pindex }}</a>
+                    {% else %}
+                        <a href="/search/?q={{ query }}&page={{ pindex }}">{{ pindex }}</a>
+                    {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                    <a href="/search/?q={{ query }}&page={{ page_obj.next_page_number }}">下一页</a>
+                {% endif %}
+
+            </div>
+        </div>
+        <a href="/search/{{ result.object.id }}/">{{ result.object.gName }}</a><br/>
+
+
+    </div>
+    </div>
+
+{% endblock %}
+

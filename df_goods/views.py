@@ -1,6 +1,7 @@
-from django.core.paginator import Paginator
 from django.shortcuts import render
 from .models import *
+from df_cart.models import ShoppingCart
+from haystack.generic_views import *
 
 
 # Create your views here.
@@ -12,7 +13,12 @@ def index(request):
             Goods.objects.filter(isDelete=False)
                 .filter(type_id=type.id)
                 .order_by("hot")[:4])
-    context = {"title": "首页", "guest_cart": 1, "typeinfos": type_infos, "goosinfo": goods_infos}
+    count = cart_count(request)
+    context = {"title": "首页",
+               "guest_cart": 1,
+               "typeinfos": type_infos,
+               "cart_count": count,
+               "goosinfo": goods_infos}
     return render(request, "df_goods/index.html", context)
 
 
@@ -29,12 +35,14 @@ def list(request, type_id, sort_id, page_index):
     else:
         pass
     paginator = Paginator(good_list, 10)
+    count = cart_count(request)
     page = paginator.page(page_index)
     context = {"title": "商品列表", "guest_cart": 1,
                "typeinfos": type_infos, "type_info": type_info,
                "new_goods": new_goods,
                "sort_id": sort_id,
                "page": page,
+               "cart_count": count,
                "paginator": paginator
                }
     return render(request, "df_goods/list.html", context)
@@ -47,10 +55,12 @@ def detail(request, id):
     goods_info.save()
     type_info = goods_info.type
     new_goods = goods_info.type.goods_set.order_by("-id")[0:2]
+    count = cart_count(request)
     context = {"title": "商品详情", "guest_cart": 1,
                "typeinfos": type_infos,
                "type_info": type_info,
                "new_goods": new_goods,
+               "cart_count": count,
                "goods_info": goods_info}
     response = render(request, 'df_goods/detail.html', context)
 
@@ -72,3 +82,22 @@ def detail(request, id):
     response.set_cookie("goods_ids", ",".join(goods_ids))
 
     return response
+
+
+def cart_count(request):
+    user_id = request.session.get("id")
+    if user_id is None:
+        return 0
+    count = ShoppingCart.objects.filter(user_id=user_id).count()
+    return count
+
+
+class MySearchView(SearchView):
+    def get_context_data(self, *args, **kwargs):
+        context = super(MySearchView, self).get_context_data(*args, **kwargs)
+        type_infos = TypeInfo.objects.filter(isDelete=False)
+        context["title"] = "全文搜索"
+        context["guest_cart"] = 1
+        context["typeinfos"] = type_infos
+        context["cart_count"] = cart_count(self.request)
+        return context

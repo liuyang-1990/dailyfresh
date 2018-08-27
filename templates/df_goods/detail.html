@@ -86,7 +86,7 @@
                 },
                 "fast", function () {
                     $(".add_jump").fadeOut('fast', function () {
-                        $('#show_count').html(2);
+                        // $('#show_count').html(2);
                     });
 
                 });
@@ -96,7 +96,7 @@
                 type: "get",
                 dataType: "json",
                 success: function (msg) {
-                    $("#show_count").val(msg.count)
+                    $("#show_count").html(msg.count)
                 }
             });
 
